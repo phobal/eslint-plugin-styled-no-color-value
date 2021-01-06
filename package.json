@@ -1,0 +1,42 @@
+{
+  "name": "eslint-plugin-styled-no-color-value",
+  "version": "0.0.1",
+  "description": "ESLint plugin to disallow the use of color value in styled file",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "styled",
+    "styled-components",
+    "styled-components-plugin",
+    "styled-color"
+  ],
+  "author": "phobal",
+  "main": "index.js",
+  "scripts": {
+    "preversion": "npm test",
+    "lint": "eslint **/*.js",
+    "test": "mocha ./test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phobal/eslint-plugin-styled-no-color-value.git"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "mocha": "latest"
+  },
+  "peerDependencies": {
+    "eslint": ">=0.8.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phobal/eslint-plugin-styled-no-color-value/issues"
+  },
+  "homepage": "https://github.com/phobal/eslint-plugin-styled-no-color-value#readme",
+  "dependencies": {
+    "postcss": "^8.2.2"
+  }
+}
