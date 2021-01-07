@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-styled-no-color-value",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "ESLint plugin to disallow the use of color value in styled file",
   "keywords": [
     "eslint",
