@@ -42,23 +42,28 @@ const hasColorPropKeys = [
   'background-color',
   'background',
   'border-color',
+  'border-top-color',
+  'border-right-color',
+  'border-bottom-color',
+  'border-left-color',
   'border',
   'border-top',
   'border-right',
   'border-bottom',
   'border-left',
   'box-shadow',
+  'text-shadow',
+  'fill',
 ]
 
-const htmlColorRegx = /^(#[a-f0-9]{6}|black|green|silver|gray|olive|white|yellow|maroon|navy|red|blue|purple|teal|fuchsia|aqua)$/i
-const cssColorRegx = /^(#[a-f0-9]{6}|#[a-f0-9]{3}|rgb *\( *[0-9]{1,3}%? *, *[0-9]{1,3}%? *, *[0-9]{1,3}%? *\)|rgba *\( *[0-9]{1,3}%? *, *[0-9]{1,3}%? *, *[0-9]{1,3}%? *, *[0-9]{1,3}%? *\)|black|green|silver|gray|olive|white|yellow|maroon|navy|red|blue|purple|teal|fuchsia|aqua)$/i
+const cssColorRegx = /(#[a-f0-9]{8}|#[a-f0-9]{6}|#[a-f0-9]{3}|rgb *\( *[0-9]{1,3}%? *, *[0-9]{1,3}%? *, *[0-9]{1,3}%? *\)|rgba *\( *[0-9]{1,3}%? *, *[0-9]{1,3}%? *, *[0-9]{1,3}%? *, (0.\d+|0|1)? *\)|black|green|silver|gray|olive|white|yellow|maroon|navy|red|blue|purple|teal|fuchsia|aqua)$/i
 
 function isValidAtomicRule(node) {
   const currentProp = node.prop
   const currentValue = node.value
   if (
     hasColorPropKeys.includes(currentProp) &&
-    (htmlColorRegx.test(currentValue) || cssColorRegx.test(currentValue))
+    cssColorRegx.test(currentValue)
   ) {
     const loc = {
       start: {
